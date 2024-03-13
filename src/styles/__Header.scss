@@ -1,0 +1,29 @@
+.header-container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+
+    .mes-documents {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img {
+        width: 80px;
+        cursor: pointer;
+    }
+
+    p {
+        color: white;
+        font-size: 20px;
+    }
+
+    .projets {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}

@@ -1,0 +1,41 @@
+[
+    {
+        "titre": "Projet 1",
+        "description": " ",
+        "competence": " ",
+        "images": [
+            "/assets/image1.jpg",
+            "/assets/image2.jpg"
+        ],
+        "techno": [
+            " "
+        ],
+        "lien": " "
+    },
+    {
+        "titre": "Projet 2",
+        "description": " ",
+        "competence": " ",
+        "images": [
+            "/assets/image1.jpg",
+            "/assets/image2.jpg"
+        ],
+        "techno": [
+            " "
+        ],
+        "lien": " "
+    },
+    {
+        "titre": "Projet 3",
+        "description": " ",
+        "competence": " ",
+        "images": [
+            "/assets/image1.jpg",
+            "/assets/image2.jpg"
+        ],
+        "techno": [
+            " "
+        ],
+        "lien": " "
+    }
+]

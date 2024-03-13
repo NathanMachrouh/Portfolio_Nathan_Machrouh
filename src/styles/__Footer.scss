@@ -1,0 +1,49 @@
+.taskbar {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(180deg, #0997ff, #0053ee 8%, #0050ee 40%, #06f 88%, #06f 93%, #005bff 95%, #003dd7 96%, #003dd7);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+
+    .start-button {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        border-radius: 0px 10px 12px 0px;
+        box-shadow: 0px 5px 10px #79ce71 inset;
+        background: radial-gradient(circle, #5eac56 0%, #3c873c 100%) center/cover no-repeat;
+        color: white;
+        font-weight: bold;
+        font-size: 25px;
+        font-style: italic;
+        padding: 0 10px;
+        cursor: pointer;
+
+        .logo-windows {
+            width: 45px;
+        }
+    }
+
+    p {
+        color: white;
+    }
+
+    .systray {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        width: 150px;
+        border-left: solid 1px black;
+        background: linear-gradient(180deg, #0f87f6, #0f87f6 8%, #0f87f6 40%, #06f 88%, #06f 93%, #005bff 95%, #003dd7 96%, #003dd7);
+        margin-left: auto; 
+    }
+
+    .time {
+        color: white;
+        margin-right: 18px;
+    }
+}
