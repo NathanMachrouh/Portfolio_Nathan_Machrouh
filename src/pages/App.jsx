@@ -1,8 +1,11 @@
-import { BrowserRouter as Router, Routes } from 'react-router-dom';
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Accueil from '../pages/Accueil';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Modal from '../components/Modal';
+import Documents from '../components/Documents';
+import Contact from '../components/Contact';
 import '../styles/__Styles.scss';
 import "xp.css/dist/XP.css";
 
@@ -26,7 +29,9 @@ function App() {
   return (
     <Router>
       <Routes>
-
+        <Route path="/" element={<Accueil />} />
+        <Route path="/documents" element={<Documents />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Header openModal={openModal} />
       <Modal

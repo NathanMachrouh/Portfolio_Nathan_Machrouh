@@ -19,7 +19,7 @@
         font-weight: bold;
         font-size: 25px;
         font-style: italic;
-        padding: 0 10px;
+        padding: 0 10px 0px 0;
         cursor: pointer;
 
         .logo-windows {
@@ -36,10 +36,15 @@
         align-items: center;
         justify-content: space-between;
         height: 100%;
-        width: 150px;
+        width: 135px;
         border-left: solid 1px black;
         background: linear-gradient(180deg, #0f87f6, #0f87f6 8%, #0f87f6 40%, #06f 88%, #06f 93%, #005bff 95%, #003dd7 96%, #003dd7);
         margin-left: auto; 
+
+        img {
+            width: 25px;
+            height: 25px;
+        }
     }
 
     .time {

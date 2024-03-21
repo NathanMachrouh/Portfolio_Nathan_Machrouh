@@ -1,0 +1,19 @@
+.projets-container {
+    display: flex;
+    flex-direction: column;
+
+    ul {
+        list-style: none;
+    }
+
+    p {
+        font-size: 18px;
+        margin-left: 10px;
+        margin-top: 15px;
+        list-style: none;
+    }
+
+    span {
+        font-weight: bold;
+    }
+}
