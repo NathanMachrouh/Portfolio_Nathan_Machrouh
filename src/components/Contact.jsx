@@ -1,12 +1,19 @@
-
+import emailjs from '@emailjs/browser'
 function Contact() {
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_yhvld8e', 'template_1wo67ic', e.target, '1L64Kq09ltp7VM_lE')
+    }
+
     return (
         <div className="contact-container">
             <div className="contact-infos">
                 <p className="contact">Contactez-moi</p>
                 <p className="num-tel">06.52.76.12.04</p>
             </div>
-            <form>
+            <form onSubmit={sendEmail}>
                 <label htmlFor="nom">Nom</label>
                 <input type="text" id="nom" name="nom" required />
 
