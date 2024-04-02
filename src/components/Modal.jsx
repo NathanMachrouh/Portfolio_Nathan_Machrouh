@@ -4,57 +4,54 @@ import React, { useRef, useState, useEffect } from 'react';
 const CustomModal = ({ isOpen, onClose, title, content, id }) => {
   const [isDragging, setIsDragging] = useState(false);
   const modalRef = useRef(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
   const [modalStartPos, setModalStartPos] = useState({ x: 0, y: 0 });
-  const footerRef = useRef(null);
+  const [position, setPosition] = useState({ x: 900, y: 300 });
 
   useEffect(() => {
-    if (isOpen && modalRef.current) {
-    }
-  }, [isOpen]);
+    const handleMouseMove = (e) => {
+      if (isDragging) {
+        const x = e.clientX - modalStartPos.x;
+        let y = e.clientY - modalStartPos.y;
+        const maxX = window.innerWidth - modalRef.current.offsetWidth;
+        const maxY = window.innerHeight - modalRef.current.offsetHeight;
 
-  useEffect(() => {
-    const savedPosition = localStorage.getItem(`modalPosition_${id}`);
-    if (savedPosition) {
-      setPosition(JSON.parse(savedPosition));
+        y = Math.max(0, Math.min(y, maxY));
+
+        setPosition({
+          x: Math.max(0, Math.min(x, maxX)),
+          y: y,
+        });
+      }
+    };
+
+    const handleMouseUp = () => {
+      if (isDragging) {
+        setIsDragging(false);
+      }
+    };
+
+    if (isDragging) {
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+    } else {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
     }
-  }, [id]);
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [isDragging, modalStartPos]);
 
   const handleMouseDown = (e) => {
-    if (!isDragging) {
-      setIsDragging(true);
-      const modalRect = modalRef.current.getBoundingClientRect();
-      setModalStartPos({
-        x: e.clientX - modalRect.left,
-        y: e.clientY - modalRect.top,
-      });
-    }
-  };
-
-  const handleMouseMove = (e) => {
-    if (isDragging) {
-      const x = e.clientX - modalStartPos.x;
-      let y = e.clientY - modalStartPos.y;
-      const maxX = window.innerWidth - modalRef.current.offsetWidth;
-      const maxY = window.innerHeight - modalRef.current.offsetHeight;
-
-      const footerHeight = 315; 
-      const maxBottom = window.innerHeight - modalRef.current.offsetHeight - footerHeight;
-
-      y = Math.min(maxBottom, Math.max(0, y));
-
-      setPosition({
-        x: Math.max(0, Math.min(x, maxX)),
-        y: y,
-      });
-    }
-  };
-
-  const handleMouseUp = () => {
-    if (isDragging) {
-      setIsDragging(false);
-      localStorage.setItem(`modalPosition_${id}`, JSON.stringify(position));
-    }
+    e.preventDefault(); 
+    setIsDragging(true);
+    const modalRect = modalRef.current.getBoundingClientRect();
+    setModalStartPos({
+      x: e.clientX - modalRect.left,
+      y: e.clientY - modalRect.top,
+    });
   };
 
   return (
@@ -67,6 +64,7 @@ const CustomModal = ({ isOpen, onClose, title, content, id }) => {
       appElement={document.getElementById("root")}
       style={{
         content: {
+          position: "absolute",
           top: `${position.y}px`,
           left: `${position.x}px`,
         }
@@ -75,10 +73,7 @@ const CustomModal = ({ isOpen, onClose, title, content, id }) => {
       <div
         className="title-bar title-bar-controls"
         onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
         ref={modalRef}
-        style={{ cursor: isDragging ? "grabbing" : "grab" }}
       >
         <p className="title-bar-text">{title}</p>
         <div className="title-bar-controls">
@@ -88,7 +83,6 @@ const CustomModal = ({ isOpen, onClose, title, content, id }) => {
         </div>
       </div>
       <div className="modal-content">{content}</div>
-      <div ref={footerRef}></div>
     </Modal >
   );
 }

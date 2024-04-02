@@ -3,16 +3,23 @@ import logoDocuments from '../assets/logo-documents.png';
 import logoDossier from '../assets/logo-dossier.png';
 import logoMail from '../assets/logo-mail.png';
 import logoTxt from '../assets/logo-txt.png';
+import logoClippy from '../assets/logo-clippy.png';
 import logoDossierImages from '../assets/logo-dossier-images.png';
 import projets from '../data/projets.json';
 import Contact from './Contact';
 import Documents from './Documents';
-import CustomModal from '../components/Modal';
-import Screenshots from '../components/Screenshots';
+import APropos from './APropos';
+import CustomModal from './Modal';
+import Screenshots from './Screenshots';
 import Projets from './Projets';
+import Competences from './Competences';
+import corbeillePleine from '../assets/logo-corbeille-pleine.png';
+import corbeilleVide from '../assets/logo-corbeille-vide.png';
+import sonCorbeille from '../sound/corbeille.mp3';
 
 function Header() {
     const [modals, setModals] = useState({});
+    const [corbeille, setCorbeille] = useState(corbeillePleine);
 
     const openModal = (title, content, id) => {
         setModals(prevModals => ({
@@ -51,13 +58,25 @@ function Header() {
         openModal(`Notepad - ${project.titre}`, <Projets projet={project} />, "modal-notepad");
     };
 
+    const soundCorbeille = () => {
+        if (corbeille === corbeilleVide) return;
+        const audio = new Audio(sonCorbeille);
+        audio.play();
+        audio.volume = 0.5;
+        setCorbeille(corbeilleVide);
+    }
+
     return (
         <div className="header-container">
-            <div className="mes-documents">
+            <div className="mes-infos">
                 <img src={logoDocuments} alt="logo mes documents" onClick={() => openModal("Mes documents", <Documents />)} />
                 <p>Mes documents</p>
                 <img src={logoMail} alt="Logo de mail" onClick={() => openModal("Outlook express", <Contact />)} />
-                <p>Outlook <p></p>express</p>
+                <p>Courrier <p></p>électronique</p>
+                <img src={logoClippy} alt="Logo de clippy" onClick={() => openModal("Notepad - A propos", <APropos />, "modal-notepad")} />
+                <p>A propos</p>
+                <img src={logoTxt} alt="Logo de txt" onClick={() => openModal("Notepad - Mes compétences", <Competences />, "modal-notepad")} />
+                <p>Mes compétences</p>
             </div>
             <div className="projets">
                 {projets.map((project, index) => (
@@ -70,6 +89,10 @@ function Header() {
             {Object.entries(modals).map(([title, { content, id }]) => (
                 <CustomModal key={title} isOpen={true} onClose={() => closeModal(title)} title={title} content={content} id={id} />
             ))}
+            <div className="corbeille">
+                <img src={corbeille} alt="logo corbeille pleine" onClick={soundCorbeille}/>
+                <p>Corbeille</p>
+            </div>
         </div>
     );
 }

@@ -17,7 +17,8 @@
             "- Javascript",
             "- React"
         ],
-        "lien": "https://github.com/NathanMachrouh/Kasa"
+        "lien": "https://github.com/NathanMachrouh/Kasa",
+        "demo": "https://projet-kasa-openclassrooms.netlify.app/"
     },
     {
         "titre": "Ohmyfood",
@@ -33,7 +34,8 @@
             "- HTML",
             "- Sass"
         ],
-        "lien": "https://nathanmachrouh.github.io/Ohmyfood/"
+        "lien": "https://github.com/NathanMachrouh/Ohmyfood",
+        "demo": "https://nathanmachrouh.github.io/Ohmyfood/"
     },
     {
         "titre": "Booki",
@@ -50,6 +52,7 @@
             "- Javascript",
             "- Google Lighthouse"
         ],
-        "lien": "https://github.com/NathanMachrouh/Booki"
+        "lien": "https://github.com/NathanMachrouh/Booki",
+        "demo": "https://nathanmachrouh.github.io/Booki/"
     }
 ]

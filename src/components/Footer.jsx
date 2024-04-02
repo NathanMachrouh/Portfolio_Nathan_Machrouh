@@ -8,7 +8,9 @@ import logoProtection from '../assets/xp-systray/logo-protection.png';
 
 const Footer = () => {
     const [currentTime, setCurrentTime] = useState(new Date());
-    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [modalIsOpen, setModalIsOpen] = useState(
+        localStorage.getItem('modalIsOpen') === 'true' ? true : false
+    );
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -25,10 +27,12 @@ const Footer = () => {
 
     const openModal = () => {
         setModalIsOpen(true);
+        localStorage.setItem('modalIsOpen', 'true');
     }
 
     const closeModal = () => {
         setModalIsOpen(false);
+        localStorage.setItem('modalIsOpen', 'false');
     }
 
     return (
@@ -37,12 +41,12 @@ const Footer = () => {
                 <img src={logoWindows} alt="logo windows" className="logo-windows" />
                 <p>Démarrer</p>
             </div>
-            <p>FR</p>
+            <p className='fr'>FR</p>
             <div className="systray">
                 <div className="systray-icons">
-                    <img src={logoSon} alt="logo du son" className="logo-son"/>
-                    <img src={logoHDD} alt="logo du son" className="logo-hdd"/>
-                    <img src={logoProtection} alt="logo du son" className="logo-protection"/>
+                    <img src={logoSon} alt="logo du son" className="logo-son" title='Volume'/>
+                    <img src={logoHDD} alt="logo du hdd" className="logo-hdd" title='HDD'/>
+                    <img src={logoProtection} alt="logo de protection" className="logo-protection" title='Protection'/>
                 </div>
                 <div className="time">
                     <p>{formattedTime()}</p>

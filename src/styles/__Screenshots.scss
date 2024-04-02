@@ -12,6 +12,10 @@
             max-width: 100%;
             height: auto;
             max-height: 450px;
+
+            &.zoomed {
+                cursor: zoom-out;
+            }
         }
 
         .screenshots {
@@ -20,28 +24,31 @@
             height: auto;
             max-height: 450px;
             margin: 0 auto;
-        }
-
-        .fleche {
-            position: absolute;
-            width: 40px;
-            cursor: pointer;
 
             &:hover {
-                transform: scale(1.1);
+                cursor: zoom-in;
             }
 
-            &.gauche {
-                top: 50%;
-                left: -50px;
-                transform: translateY(-50%);
+            &.zoom {
+                cursor: zoom-out;
+                transform: scale(2);
             }
+        }
+    }
 
-            &.droite {
-                top: 50%;
-                right: -50px;
-                transform: translateY(-50%);
-            }
+    .fleche {
+        position: absolute;
+        width: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+
+        &.gauche {
+            left: 10px;
+        }
+
+        &.droite {
+            right: 10px;
         }
     }
 

@@ -7,6 +7,7 @@
     left: 0;
     width: 100%;
     height: 40px;
+    color: white;
 
     .start-button {
         display: flex;
@@ -15,7 +16,6 @@
         border-radius: 0px 10px 12px 0px;
         box-shadow: 0px 5px 10px #79ce71 inset;
         background: radial-gradient(circle, #5eac56 0%, #3c873c 100%) center/cover no-repeat;
-        color: white;
         font-weight: bold;
         font-size: 25px;
         font-style: italic;
@@ -27,16 +27,17 @@
         }
     }
 
-    p {
-        color: white;
+    .fr {
+        position: fixed;
+        right: 170px;
     }
 
     .systray {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         height: 100%;
-        width: 135px;
+        width: 155px;
         border-left: solid 1px black;
         background: linear-gradient(180deg, #0f87f6, #0f87f6 8%, #0f87f6 40%, #06f 88%, #06f 93%, #005bff 95%, #003dd7 96%, #003dd7);
         margin-left: auto; 

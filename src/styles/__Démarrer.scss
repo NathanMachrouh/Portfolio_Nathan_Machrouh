@@ -1,5 +1,173 @@
 .démarrer-container {
     position: fixed;
-    bottom: 37px;
+    width: 480px;
+    height: 700px;
+    border: solid 2px #245edb;
+    border-radius: 10px;
+    bottom: 40px;
     left: 0;
+
+    .démarrer-haut {
+        display: flex;
+        align-items: center;
+        top: 0;
+        width: 100%;
+        height: 100px;
+        border: solid 1px #245edb;
+        border-radius: 10px 10px 0 0;
+        background: linear-gradient(to bottom, #245edb 0%, #0c8dea 100%);
+
+        img {
+            width: 70px;
+            height: 70px;
+            border: solid 2px white;
+            margin-left: 10px;
+        }
+
+        p {
+            align-items: center;
+            color: white;
+            font-size: 30px;
+            margin-left: 20px;
+        }
+    }
+
+    .démarrer-colonnes {
+        display: flex;
+
+        .démarrer-gauche {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 50%;
+            height: 540px;
+            border: solid 1px white;
+            background-color: white;
+            cursor: default;
+
+
+            ul {
+                padding: 5px;
+
+                li {
+                    display: flex;
+                    padding: 5px;
+                    align-items: center;
+                    font-size: 13px;
+                    font-weight: bold;
+
+                    img {
+                        width: 38px;
+                        height: 35px;
+                    }
+
+                    &:hover {
+                        background-color: #245edb;
+                        color: white;
+                    }
+                }
+            }
+
+            .separateur-programmes {
+                margin-top: 240px;
+            }
+
+            .tous-programmes {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 10px;
+                margin-top: -20px;
+
+                img {
+                    width: 25px;
+                    margin-right: 10px;
+                }
+
+                p {
+                    font-size: 15px;
+                    font-weight: bold;
+                }
+
+                &:hover {
+                    background-color: #245edb;
+                    color: white;
+                }
+            }
+        }
+
+        .démarrer-droite {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 50%;
+            height: 540px;
+            background-color: #D3E5FA;
+            cursor: default;
+
+            .texte-gras {
+                font-weight: bold;
+            }
+
+            ul {
+                padding: 5px;
+
+                li {
+                    display: flex;
+                    padding: 5px;
+                    align-items: center;
+                    font-size: 13px;
+
+                    img {
+                        width: 38px;
+                        height: 35px;
+                    }
+
+                    &:hover {
+                        background-color: #245edb;
+                        color: white;
+                    }
+                }
+
+                .separateur-bleu {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .démarrer-bas {
+        position: absolute;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        background: linear-gradient(to bottom, #0c8dea 0%, #245edb 100%);
+
+        .stop-session,
+        .stop-computeur {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            margin-right: 5px;
+            cursor: default;
+
+            &:hover {
+                background-color: #245edb;
+                color: white;
+            }
+
+            img {
+                width: 40px;
+            }
+
+            p {
+                color: white;
+                font-size: 18px;
+            }
+        }
+    }
 }
