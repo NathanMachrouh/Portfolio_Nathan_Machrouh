@@ -33,7 +33,7 @@
 
             &.zoom {
                 position: fixed;
-                top: clamp(0vh, 30vh, 30vh);
+                top: clamp(0vh, 25vh, 30vh);
                 left: clamp(0vw, 30vw, 30vw);
                 z-index: 30;
                 cursor: zoom-out;
