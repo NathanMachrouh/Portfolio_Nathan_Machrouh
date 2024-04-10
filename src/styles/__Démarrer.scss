@@ -1,11 +1,14 @@
 .démarrer-container {
     position: fixed;
-    width: 480px;
-    height: 700px;
+    width: clamp(250px, 98%, 480px);
+    height: clamp(590px, 80%, 700px);
+    //width: 480px;
+    //height: 700px;
     border: solid 2px #245edb;
     border-radius: 10px;
     bottom: 40px;
     left: 0;
+    z-index: 50;
 
     .démarrer-haut {
         display: flex;
@@ -27,24 +30,27 @@
         p {
             align-items: center;
             color: white;
-            font-size: 30px;
+            font-size: clamp(25px, 4vw, 30px);
             margin-left: 20px;
         }
     }
 
     .démarrer-colonnes {
         display: flex;
+        height: clamp(74%, 77%, 77%);
 
         .démarrer-gauche {
             display: flex;
             flex-direction: column;
             gap: 30px;
             width: 50%;
-            height: 540px;
-            border: solid 1px white;
+            //border: solid 1px white;
             background-color: white;
             cursor: default;
 
+            @media screen and (max-height: 880px){
+                width: 100%;
+            }
 
             ul {
                 padding: 5px;
@@ -69,7 +75,7 @@
             }
 
             .separateur-programmes {
-                margin-top: 240px;
+                margin-top: 230px;
             }
 
             .tous-programmes {
@@ -78,6 +84,10 @@
                 justify-content: flex-end;
                 gap: 10px;
                 margin-top: -20px;
+
+                @media screen and (max-height: 880px) {
+                    display: none;
+                }
 
                 img {
                     width: 25px;
@@ -101,9 +111,22 @@
             flex-direction: column;
             gap: 30px;
             width: 50%;
-            height: 540px;
+            height: 100%;
             background-color: #D3E5FA;
             cursor: default;
+            overflow: auto;
+
+            &::-webkit-scrollbar {
+                display: none; // Pour les navigateurs basés sur WebKit (comme Chrome et Safari)
+            }
+
+            -ms-overflow-style: none; // Pour Internet Explorer et Edge
+            scrollbar-width: none; // Pour Firefox
+
+
+            @media screen and (max-height: 880px){
+                display: none;
+            }
 
             .texte-gras {
                 font-weight: bold;

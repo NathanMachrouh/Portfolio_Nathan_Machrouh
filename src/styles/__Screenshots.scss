@@ -3,15 +3,17 @@
     text-align: center;
 
     .carousel {
-        display: inline-block;
+        display: flex;
         position: relative;
         max-width: 680px;
-        height: 450px;
+        height: 400px;
+        justify-content: center;
 
         .screenshots-container {
-            max-width: 100%;
+            display: flex;
+            width: 100%;
+            max-width: 70%;
             height: auto;
-            max-height: 450px;
 
             &.zoomed {
                 cursor: zoom-out;
@@ -30,8 +32,17 @@
             }
 
             &.zoom {
+                position: fixed;
+                top: clamp(0vh, 30vh, 30vh);
+                left: clamp(0vw, 30vw, 30vw);
+                z-index: 30;
                 cursor: zoom-out;
                 transform: scale(2);
+
+                @media screen and (max-width: 425px) {
+                    height: 46vh;
+                    width: 45vw;
+                }
             }
         }
     }
@@ -42,6 +53,7 @@
         top: 50%;
         transform: translateY(-50%);
         cursor: pointer;
+        z-index: 20;
 
         &.gauche {
             left: 10px;

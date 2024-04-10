@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import startSound from '../sound/start.mp3';
+//import startSound from '../sound/start.mp3';
 
 const Accueil = () => {
     const [display, setDisplay] = useState(true);

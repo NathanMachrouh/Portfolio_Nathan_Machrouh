@@ -4,6 +4,12 @@
     flex-direction: column;
     gap: 10px;
     text-align: center;
+    margin: 10px;
+    font-family: "Pixelated MS Sans Serif";
+
+    @media screen and (max-height: 740px) {
+        flex-direction: row;
+    }
 
     .mes-infos {
         display: flex;
@@ -30,8 +36,11 @@
 
     .corbeille {
         position: fixed;
-        bottom: 200px;
+        bottom: 20vh;
         right: 40px;
+        @media screen and (max-width: 425px) {
+            display: none;
+        }
 
         &:hover {
             cursor: default;

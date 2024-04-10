@@ -6,6 +6,9 @@
   min-width: 250px;
   min-height: 300px;
   outline: none;
+
+  
+
 }
 
 .overlay {
@@ -34,11 +37,22 @@
 
 #modal-notepad {
   background-color: white;
-  width: 450px;
-  height: 500px;
+  width: clamp(320px, 80%, 450px);
+  height: clamp(400px, 80vh, 500px);
+
+  .modal-content{
+    overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none; // Pour les navigateurs basés sur WebKit (comme Chrome et Safari)
+  }
+
+  -ms-overflow-style: none; // Pour Internet Explorer et Edge
+  scrollbar-width: none; // Pour Firefox
+  }
 }
 
 #modal-screenshots {
-  width: 700px;
-  height: 550px;
+  width: clamp(320px, 80%, 450px);
+  height: clamp(500px, 60%, 500px);
 }

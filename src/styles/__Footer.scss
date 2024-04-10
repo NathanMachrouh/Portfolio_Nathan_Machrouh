@@ -9,6 +9,10 @@
     height: 40px;
     color: white;
 
+    @media screen and (max-width: 425px) {
+        background: none;
+    }
+
     .start-button {
         display: flex;
         align-items: center;
@@ -21,6 +25,13 @@
         font-style: italic;
         padding: 0 10px 0px 0;
         cursor: pointer;
+        z-index: 1000;
+
+        @media screen and (max-width: 425px) {
+            width: 100%;
+            justify-content: center;
+            border-radius: 10px;
+        }
 
         .logo-windows {
             width: 45px;
@@ -30,6 +41,10 @@
     .fr {
         position: fixed;
         right: 170px;
+
+        @media screen and (max-width: 425px) {
+            display: none;
+        }
     }
 
     .systray {
@@ -41,6 +56,10 @@
         border-left: solid 1px black;
         background: linear-gradient(180deg, #0f87f6, #0f87f6 8%, #0f87f6 40%, #06f 88%, #06f 93%, #005bff 95%, #003dd7 96%, #003dd7);
         margin-left: auto; 
+        
+        @media screen and (max-width: 425px) {
+            display: none;
+        }
 
         img {
             width: 25px;

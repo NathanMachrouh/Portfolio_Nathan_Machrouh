@@ -1,7 +1,7 @@
 .competences-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 50px;
 
     .competences-title {
         font-size: 20px;
@@ -9,6 +9,12 @@
         text-align: center;
     }
 
+    .competences-liste{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
     span {
         font-size: 15px;
         font-weight: bold;

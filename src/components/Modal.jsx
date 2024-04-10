@@ -5,7 +5,7 @@ const CustomModal = ({ isOpen, onClose, title, content, id }) => {
   const [isDragging, setIsDragging] = useState(false);
   const modalRef = useRef(null);
   const [modalStartPos, setModalStartPos] = useState({ x: 0, y: 0 });
-  const [position, setPosition] = useState({ x: 900, y: 300 });
+  const [position, setPosition] = useState({ x: 700, y: 300 });
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -45,7 +45,7 @@ const CustomModal = ({ isOpen, onClose, title, content, id }) => {
   }, [isDragging, modalStartPos]);
 
   const handleMouseDown = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     setIsDragging(true);
     const modalRect = modalRef.current.getBoundingClientRect();
     setModalStartPos({
@@ -67,6 +67,18 @@ const CustomModal = ({ isOpen, onClose, title, content, id }) => {
           position: "absolute",
           top: `${position.y}px`,
           left: `${position.x}px`,
+          ...(window.innerWidth <= 1024 && window.innerWidth >= 425
+            ? {
+                top: "300px",
+                left: "80px",
+              }
+            : {}),
+          ...(window.innerWidth <= 425
+            ? {
+                top: "0",
+                left: "0",
+              }
+            : {})
         }
       }}
     >

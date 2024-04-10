@@ -1,11 +1,12 @@
 .a-propos {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    //text-align: center;
+    padding: 0 10px;
     gap: 20px;
 
     p {
-        font-size: 15px;
+        font-size: clamp(15px, 10vw, 19px); // 15px;
     }
 
 }
