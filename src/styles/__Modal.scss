@@ -44,11 +44,11 @@
     overflow: auto;
 
   &::-webkit-scrollbar {
-    display: none; // Pour les navigateurs basés sur WebKit (comme Chrome et Safari)
+    display: none;
   }
 
-  -ms-overflow-style: none; // Pour Internet Explorer et Edge
-  scrollbar-width: none; // Pour Firefox
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   }
 }
 

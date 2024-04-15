@@ -2,8 +2,6 @@
     position: fixed;
     width: clamp(250px, 98%, 480px);
     height: clamp(590px, 80%, 700px);
-    //width: 480px;
-    //height: 700px;
     border: solid 2px #245edb;
     border-radius: 10px;
     bottom: 40px;
@@ -44,7 +42,6 @@
             flex-direction: column;
             gap: 30px;
             width: 50%;
-            //border: solid 1px white;
             background-color: white;
             cursor: default;
 
@@ -117,11 +114,11 @@
             overflow: auto;
 
             &::-webkit-scrollbar {
-                display: none; // Pour les navigateurs basés sur WebKit (comme Chrome et Safari)
+                display: none;
             }
 
-            -ms-overflow-style: none; // Pour Internet Explorer et Edge
-            scrollbar-width: none; // Pour Firefox
+            -ms-overflow-style: none;
+            scrollbar-width: none;
 
 
             @media screen and (max-height: 880px){

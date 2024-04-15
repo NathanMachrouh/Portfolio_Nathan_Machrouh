@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from 'react';
-//import startSound from '../sound/start.mp3';
+
 
 const Accueil = () => {
     const [display, setDisplay] = useState(true);
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            // const audio = new Audio(startSound);
-            // audio.volume = 0.1;
-            // audio.play();
             setDisplay(false);
-            // audio.stop();
         }, 3000);
 
         return () => clearTimeout(timer);
