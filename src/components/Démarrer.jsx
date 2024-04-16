@@ -17,7 +17,7 @@ import logoFavorisReseau from '../assets/logo-favoris-reseau.png';
 import logoLoupe from '../assets/logo-loupe.png';
 import logoDocumentsRecents from '../assets/logo-documents-recents.png';
 import logoHelp from '../assets/logo-help.png';
-import logoExecuter from '../assets/logo-executer.png';
+import logoExecuter from '../assets/logo-executer.ico';
 import logoFlecheVerte from '../assets/logo-fleches-verte.png';
 import logoMsn from '../assets/logo-msn.png';
 import Documents from './Documents';
