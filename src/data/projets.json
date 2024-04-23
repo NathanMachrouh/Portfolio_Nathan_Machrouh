@@ -2,7 +2,7 @@
     {
         "titre": "Kasa",
         "description": "Refonte du site d'une location immobilière avec React",
-        "competence": "Mise en place d'un systéme de routes, de composants React, d'animations CSS (avec Sass) et lecture d'un fichier JSON.",
+        "compétences": "Mise en place d'un systéme de routes, de composants React, d'animations CSS (avec Sass) et lecture d'un fichier JSON.",
         "images": [
             "/assets/Kasa/Image1.webp",
             "/assets/Kasa/Image2.webp",
@@ -25,7 +25,7 @@
     {
         "titre": "Ohmyfood",
         "description": "Création d'un site ' Mobile First ' qui répertorie les menus de restaurants gastronomiques à partir de maquettes.",
-        "competence": "Création d'animations CSS et design responsive avec une approche ' Mobile First '",
+        "compétences": "Création d'animations CSS et design responsive avec une approche ' Mobile First '",
         "images": [
             "/assets/Ohmyfood/Image1.webp",
             "/assets/Ohmyfood/Image2.webp",
@@ -42,7 +42,7 @@
     {
         "titre": "Booki",
         "description": "Création de la page d'accueil d'une agence de voyage",
-        "competence": "Lecture et intégration de maquettes figma d'une interface desktop, tablette et mobile.",
+        "compétences": "Lecture et intégration de maquettes figma d'une interface desktop, tablette et mobile.",
         "images": [
             "/assets/Booki/Image1.webp",
             "/assets/Booki/Image2.webp",
